@@ -44,10 +44,10 @@ def add_entries():
     Email = Label(add_frame, text="Email")
     Password = Label(add_frame, text="Password")
 
-    Website_name.grid(row=0, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Username.grid(row=1, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Email.grid(row=2, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Password.grid(row=3, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels)
+    Website_name.grid(row=0, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Username.grid(row=1, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Email.grid(row=2, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Password.grid(row=3, column=0, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
 
     # Form input fields
     Website_name_entry = Entry(add_frame)
@@ -55,10 +55,10 @@ def add_entries():
     Email_entry = Entry(add_frame)
     Password_entry = Entry(add_frame)
     
-    Website_name_entry.grid(row=0, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Username_entry.grid(row=1, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Email_entry.grid(row=2, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels)
-    Password_entry.grid(row=3, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels)
+    Website_name_entry.grid(row=0, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Username_entry.grid(row=1, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Email_entry.grid(row=2, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
+    Password_entry.grid(row=3, column=1, padx=padx_for_form_labels, pady=pady_for_form_labels, sticky="w")
 
     # confirm bubtton
     confirm_button = Button(add_frame, text="confirm" , command=confirm)
