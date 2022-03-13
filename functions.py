@@ -68,6 +68,28 @@ def add_entries():
     
 
 
+def print_passwords_table(Dashboard):
+    data = database.select_from_database()
+    padx_space = 10
+    pady_space = 1
+
+    for i in range(len(data)):
+        number = Label(Dashboard, text=data[i][4])
+        number.grid(row=i, column=0, padx=padx_space, pady=pady_space)
+
+        website = Label(Dashboard, text=data[i][0])
+        website.grid(row=i, column=1, padx=padx_space, pady=pady_space)
+
+        username = Label(Dashboard, text=data[i][1])
+        username.grid(row=i, column=2, padx=padx_space, pady=pady_space)
+
+        email = Label(Dashboard, text=data[i][2])
+        email.grid(row=i, column=3, padx=padx_space, pady=pady_space)
+
+        password = Label(Dashboard, text=data[i][3])
+        password.grid(row=i, column=4, padx=padx_space, pady=pady_space)
+
+
 if __name__ == "__main__":
-    add_entries()
+    print_passwords_table()
     

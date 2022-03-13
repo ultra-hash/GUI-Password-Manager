@@ -34,3 +34,11 @@ def insert_to_database(website_name, username, email, password):
         })
     conn.commit()
     conn.close()
+
+
+def select_from_database():
+    (conn , curser) = connect_to_db()
+    curser.execute(f"SELECT *,oid FROM passwords")
+    result = curser.fetchall()
+    conn.close()
+    return result
