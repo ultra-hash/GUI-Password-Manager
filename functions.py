@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import database, os
 
 def add_entries():
 
@@ -11,10 +12,15 @@ def add_entries():
         Email        : {Email_entry.get()}
         Password     : {Password_entry.get()}
         """
+
+        
         # Ask To Confirm
         confirmation = messagebox.askokcancel(title="Confirm Details", message=details_message)
         if confirmation:
-            ok = messagebox.showinfo(title="Success", message="Success")
+            if not os.path.exists('test_database.db'):
+                database.create_table()
+            database.insert_to_database(Website_name_entry.get(), Username_entry.get(), Email_entry.get(), Password_entry.get())
+            messagebox.showinfo(title="Success", message="Success")
         
         
         # Empty fields
