@@ -1,3 +1,4 @@
+from cgitb import text
 from tkinter import *
 from tkinter import messagebox
 import database, os
@@ -73,21 +74,38 @@ def print_passwords_table(Dashboard):
     padx_space = 10
     pady_space = 1
 
+    # Table row titles
+    number = Label(Dashboard, text="S.no")
+    number.grid(row=0, column=0, padx=padx_space, pady=pady_space)
+
+    website = Label(Dashboard, text="website")
+    website.grid(row=0, column=1, padx=padx_space, pady=pady_space)
+
+    username = Label(Dashboard, text="Username")
+    username.grid(row=0, column=2, padx=padx_space, pady=pady_space)
+
+    email = Label(Dashboard, text="Email")
+    email.grid(row=0, column=3, padx=padx_space, pady=pady_space)
+
+    password = Label(Dashboard, text="Password")
+    password.grid(row=0, column=4, padx=padx_space, pady=pady_space)
+    
+    # results
     for i in range(len(data)):
         number = Label(Dashboard, text=data[i][4])
-        number.grid(row=i, column=0, padx=padx_space, pady=pady_space)
+        number.grid(row=i+1, column=0, padx=padx_space, pady=pady_space)
 
         website = Label(Dashboard, text=data[i][0])
-        website.grid(row=i, column=1, padx=padx_space, pady=pady_space)
+        website.grid(row=i+1, column=1, padx=padx_space, pady=pady_space)
 
         username = Label(Dashboard, text=data[i][1])
-        username.grid(row=i, column=2, padx=padx_space, pady=pady_space)
+        username.grid(row=i+1, column=2, padx=padx_space, pady=pady_space)
 
         email = Label(Dashboard, text=data[i][2])
-        email.grid(row=i, column=3, padx=padx_space, pady=pady_space)
+        email.grid(row=i+1, column=3, padx=padx_space, pady=pady_space)
 
         password = Label(Dashboard, text=data[i][3])
-        password.grid(row=i, column=4, padx=padx_space, pady=pady_space)
+        password.grid(row=i+1, column=4, padx=padx_space, pady=pady_space)
 
 
 if __name__ == "__main__":
