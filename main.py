@@ -18,6 +18,9 @@ toolbar = LabelFrame(root)
 toolbar.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
 # Button in Toolbar
+REFRESH_button = Button(toolbar, text="REFRESH" , command=lambda : print_passwords_table(root))
+REFRESH_button.grid(row=0, column=0)
+
 ADD_button = Button(toolbar, text="Add" , command=add_entries)
 ADD_button.grid(row=0, column=1)
 
@@ -32,10 +35,8 @@ QUIT_button.grid(row=0, column=4)
 
 
 # Dashboard Frame
-Dashboard = LabelFrame(root, text="Dashboard")
-Dashboard.grid(row=1,column=0, padx=10, pady=10)
 
-print_passwords_table(Dashboard)
+print_passwords_table(root)
 
 
 

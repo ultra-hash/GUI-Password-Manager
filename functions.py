@@ -1,4 +1,3 @@
-from cgitb import text
 from tkinter import *
 from tkinter import messagebox
 import database, os
@@ -23,12 +22,13 @@ def add_entries():
             database.insert_to_database(Website_name_entry.get(), Username_entry.get(), Email_entry.get(), Password_entry.get())
             messagebox.showinfo(title="Success", message="Success")
         
-        
+
         # Empty fields
         Website_name_entry.delete(0, END)
         Username_entry.delete(0, END)
         Email_entry.delete(0, END)
         Password_entry.delete(0, END)
+
 
     toplevel = Toplevel()
     toplevel.title("ADD Detials")
@@ -69,7 +69,14 @@ def add_entries():
     
 
 
-def print_passwords_table(Dashboard):
+def print_passwords_table(root):
+    
+    # Dashboard Frame
+    Dashboard = LabelFrame(root, text="Dashboard")
+    Dashboard.grid(row=1,column=0, padx=10, pady=10)
+    if not os.path.exists('test_database.db'):
+                database.create_table()
+
     data = database.select_from_database()
     padx_space = 10
     pady_space = 1
@@ -106,7 +113,6 @@ def print_passwords_table(Dashboard):
 
         password = Label(Dashboard, text=data[i][3])
         password.grid(row=i+1, column=4, padx=padx_space, pady=pady_space)
-
 
 if __name__ == "__main__":
     print_passwords_table()
